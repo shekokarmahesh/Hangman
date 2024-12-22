@@ -4,9 +4,10 @@
   "description": "A Hangman application with frontend and backend",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run start-client\" \"npm run start-backend\"",
-    "start-client": "cd Client && npm run dev",
-    "start-backend": "cd Server && npx json-server DB.json"
+    "build": "npm install && cd client && npm install",
+    "start": "npm run build && concurrently \"npm run start-client\" \"npm run start-backend\"",
+    "start-client": "cd client && npm run dev",
+    "start-backend": "cd server && npx json-server DB.json"
   },
   "keywords": [],
   "author": "",
