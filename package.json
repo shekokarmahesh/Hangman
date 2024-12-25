@@ -1,21 +1,16 @@
 {
   "name": "hangman-github",
   "version": "1.0.0",
-  "description": "A Hangman application with frontend and backend",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && cd Client && npm install",
-    "start": "npm run build && concurrently \"npm run start-client\" \"npm run start-backend\"",
-    "start-client": "cd client && npm run dev",
-    "start-backend": "cd server && npx json-server DB.json"
+    "build": "npm install concurrently --save-dev && cd Client && npm install && cd ../Server && npm install",
+    "start": "concurrently \"cd Client && npm run dev\" \"cd Server && npx json-server DB.json\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "json-server": "^0.17.0"
-  },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^7.6.0"
   }
 }
